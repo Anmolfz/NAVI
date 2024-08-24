@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed and Plan Suggestion App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Google Fonts for a similar feel -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="https://i.imghippo.com/files/hLPFc1724267612.png" alt="Logo">
+            </div>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="#plans">Plans</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Left Text Section -->
+                <div class="text-content">
+                    <h1>Compare the best broadband plans all in one place</h1>
+                    <p class="intro-text">Get personalised broadband plan recommendations based on your usage and preferences. Please fill in the details to find the best plan for you.</p>
+                </div>
+
+                <!-- Right Form Section -->
+                <div class="form-container">
+                    <div class="tab-switch">
+                        <div class="info-box">
+                            <label>Enter Your Info</label>
+                        </div>
+                    </div>
+                    <form method="POST" class="plan-form">
+                        <div class="form-group">
+                            <label for="county_name">Select County:</label>
+                            <select id="county_name" name="county_name" required>
+                                <option value="" disabled>Select your county</option>
+                                {% for county in counties %}
+                                    <option value="{{ county }}" {% if county == selected_county %}selected{% endif %}>{{ county }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" name="age" value="{{ age }}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="income">Income:</label>
+                            <input type="number" id="income" name="income" value="{{ income }}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="devices">Number of Devices:</label>
+                            <input type="number" id="devices" name="devices" value="{{ devices }}" required>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Find Plan</button>
+                    </form>
+                </div>
+            </div>
+
+            {% if result %}
+            <div class="result-box">
+                <h2>Suggested Plan:</h2>
+                <div class="plan-details">
+                    {{ result|safe }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Byte Brigade, All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
