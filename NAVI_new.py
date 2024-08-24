@@ -40,7 +40,7 @@ def load_data():
 
 @cache_data
 def train_model(X_train, y_train):
-    model = RandomForestRegressor(n_estimators=1, random_state=42)
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
     return model
 
