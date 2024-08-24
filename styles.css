@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #003f3f; /* Dark green background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-color: #003f3f; /* Dark green */
+    color: white;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 100px; /* Increase the height to make the logo bigger */
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.header .nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    align-items: flex-start;
+}
+
+/* Left Text Section */
+.text-content {
+    width: 50%;
+    padding-right: 40px;
+    margin-top: 60px; /* Add margin to lower the text */
+}
+
+.text-content h1 {
+    font-size: 2.5em;
+    color: white;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+}
+
+.text-content .intro-text {
+    font-size: 1.3em;
+    color: #d6e6d1;
+}
+
+/* Right Form Section */
+.form-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+}
+
+.tab-switch {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab-switch .tab {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px 20px 0 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tab-switch .tab.active {
+    background-color: #e6b800;
+}
+
+/* Info Box Styling */
+.info-box {
+    background-color: #ffcc00; /* Yellow background color */
+    padding: 10px 20px; /* Padding inside the box */
+    border-radius: 10px; /* Curved corners */
+    display: inline-block; /* Fit the box to the content */
+    font-weight: 600; /* Make the text bold */
+    color: #003f3f; /* Text color to match the theme */
+}
+
+.plan-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.plan-form label {
+    font-weight: 600;
+    color: #003f3f;
+    margin-bottom: 5px;
+}
+
+.plan-form select,
+.plan-form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    color: #003f3f;
+}
+
+.btn-primary {
+    background-color: #ffcc00;
+    color: #003f3f;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #e6b800;
+}
+
+/* Result Box Styles */
+.result-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    width: 90%; /* Adjust width as needed */
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto; /* Center the box */
+}
+
+.result-box h2 {
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.result-box .plan-details {
+    font-size: 1.1em;
+    color: #000000
+}
+
+.result-box .plan-details .plan-name {
+    color: #003f3f !important; /* Force green colour */
+    font-weight: bold; /* Keep bold */
+}
+
+/* Footer */
+.footer {
+    background-color: #003f3f;
+    color: white;
+    text-align: center;
+    padding: 1px 0;
+    margin-top: 1px;
+}
